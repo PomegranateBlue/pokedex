@@ -1,7 +1,8 @@
-import {useState} from "react"
+import { useState } from "react";
 
-const DashBoard=()=>{
-    
-}
+const DashBoard = () => {
+  const [pokemonInBall, setPokemonInBall] = useState([]);
+  return <div></div>;
+};
 
-export default DashBoard
+export default DashBoard;
