@@ -1,5 +1,3 @@
-import POKEMON_DATA from "../assets/MOCK_DATA";
-import { useState } from "react";
 import styled from "styled-components";
 
 const PokemonCardFrame = styled.div`
@@ -7,32 +5,31 @@ const PokemonCardFrame = styled.div`
   flex-direction: column;
   width: 220px;
   height: 320px;
-  border: solid 1px white;
+  border: solid 3px black;
   font-size: 12px;
   justify-content: center;
   align-items: center;
 `;
 
-const PokemonCardContent = () => styled.div``;
+const PokemonCardContainer=styled.div`
+    background-color:
+`
 
-const PokemonCard = () => {
-  const [pokemonData, setPokemonData] = useState(POKEMON_DATA);
+const PokemonCard = ({ pokemonData }) => {
   console.log(pokemonData);
   return (
     <div>
-      {pokemonData.map((pokemonInfo) => (
-        <PokemonCardFrame key={pokemonInfo.id}>
-          {" "}
-          <div>
-            <img src={pokemonInfo.img_url}></img>
-          </div>
-          <div>{pokemonInfo.korean_name}</div>
-          <div>{pokemonInfo.types}</div>
-          <div>{pokemonInfo.description}</div>
-          <div>No. {pokemonInfo.id}</div>
-          <button>추가</button>
-        </PokemonCardFrame>
-      ))}
+      <PokemonCardFrame>
+        {" "}
+        <div>
+          <img src={pokemonData.img_url}></img>
+        </div>
+        <div>{pokemonData.korean_name}</div>
+        <div>{pokemonData.types}</div>
+        <div>{pokemonData.description}</div>
+        <div>No. {pokemonData.id}</div>
+        <button>추가</button>
+      </PokemonCardFrame>
     </div>
   );
 };
