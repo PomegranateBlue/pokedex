@@ -6,15 +6,16 @@ const PokemonCardFrame = styled.div`
   padding: 8px;
   width: 180px;
   height: 280px;
-  border: solid 3px black;
+  border: ridge;
   border-radius: 6px;
-  box-shadow: 8px 6px 3px 3px rgb(147, 147, 147);
+  box-shadow: 6px 6px rgb(147, 147, 147);
   font-size: 12px;
   justify-content: center;
   align-items: center;
 `;
 
 const PokemonCard = ({ pokemonData }) => {
+  const addPokemon = () => {};
   return (
     <div>
       <PokemonCardFrame>
@@ -24,7 +25,7 @@ const PokemonCard = ({ pokemonData }) => {
         </div>
         <div>{pokemonData.korean_name}</div>
         <div>{pokemonData.types}</div>
-        <div>{pokemonData.description}</div>
+        {/* <div>{pokemonData.description}</div> */}
         <div>No. {pokemonData.id}</div>
         <button>추가</button>
       </PokemonCardFrame>

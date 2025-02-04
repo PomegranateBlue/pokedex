@@ -2,7 +2,8 @@ import DashBoard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
 import styled from "styled-components";
 const Container = styled.div`
-  width: 85%;
+  width: 98%;
+  margin: 10px;
   margin: 0 auto;
   background-color: rgb(250, 250, 250);
 `;
