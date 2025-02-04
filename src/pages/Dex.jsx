@@ -2,7 +2,9 @@ import DashBoard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
 import styled from "styled-components";
 const Container = styled.div`
-  background-color: pink;
+  width: 85%;
+  margin: 0 auto;
+  background-color: rgb(250, 250, 250);
 `;
 
 const Dex = () => {

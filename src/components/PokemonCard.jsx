@@ -3,20 +3,18 @@ import styled from "styled-components";
 const PokemonCardFrame = styled.div`
   display: flex;
   flex-direction: column;
-  width: 220px;
-  height: 320px;
+  padding: 8px;
+  width: 180px;
+  height: 280px;
   border: solid 3px black;
+  border-radius: 6px;
+  box-shadow: 8px 6px 3px 3px rgb(147, 147, 147);
   font-size: 12px;
   justify-content: center;
   align-items: center;
 `;
 
-const PokemonCardContainer=styled.div`
-    background-color:
-`
-
 const PokemonCard = ({ pokemonData }) => {
-  console.log(pokemonData);
   return (
     <div>
       <PokemonCardFrame>
