@@ -12,9 +12,10 @@ const PokemonCardFrame = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const PokemonImage=styled.img`
-    
-`
+const PokemonImage = () => styled.img`
+  width: 100px;
+  height: auto;
+`;
 
 const PokemonCard = () => {
   const [pokemonData, setPokemonData] = useState({
@@ -27,9 +28,7 @@ const PokemonCard = () => {
   });
   return (
     <PokemonCardFrame className="card-container">
-      <div className="pokemon-image">
-        <img src={pokemonData.img_url} />
-      </div>
+      <PokemonImage src={PokemonCard.img_url} />
       <div className="pokemon-name">{pokemonData.korean_name}</div>
       <div className="pokemon-types">{pokemonData.types}</div>
       <div className="pokemon-description">{pokemonData.description}</div>
