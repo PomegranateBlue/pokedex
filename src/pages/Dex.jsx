@@ -1,4 +1,4 @@
-import React from "react";
+
 import DashBoard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
 const Dex = () => {
