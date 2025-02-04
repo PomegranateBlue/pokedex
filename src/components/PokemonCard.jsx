@@ -3,13 +3,12 @@ import styled from "styled-components";
 const PokemonCardFrame = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 8px;
-  width: 180px;
-  height: 280px;
+  padding: 30px;
+  margin: 10px;
   border: ridge;
   border-radius: 6px;
   box-shadow: 6px 6px rgb(147, 147, 147);
-  font-size: 12px;
+  font-size: 16px;
   justify-content: center;
   align-items: center;
 `;
