@@ -45,7 +45,7 @@ const DashBoard = ({ pokemonInBall, deletePokemonCard }) => {
       <SelectedPokemonBoard>
         <h1>좋아하는 포켓몬은?</h1>
         <PokeBallSpriteContainer>
-          {pokemonInBall.map((bag) => (
+          {/* {pokemonInBall.map((bag) => (
             <PokemonCardFrame key={bag.id}>
               <div>
                 <img src={bag.img_url}></img>
@@ -55,7 +55,13 @@ const DashBoard = ({ pokemonInBall, deletePokemonCard }) => {
               <div>No. {bag.id}</div>
               <button onClick={() => deletePokemonCard(bag.id)}>삭제</button>
             </PokemonCardFrame>
-          ))}
+          ))} */}
+          <PokeBallSprite></PokeBallSprite>
+          <PokeBallSprite></PokeBallSprite>
+          <PokeBallSprite></PokeBallSprite>
+          <PokeBallSprite></PokeBallSprite>
+          <PokeBallSprite></PokeBallSprite>
+          <PokeBallSprite></PokeBallSprite>
         </PokeBallSpriteContainer>
       </SelectedPokemonBoard>
     </div>
