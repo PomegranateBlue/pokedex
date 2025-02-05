@@ -41,7 +41,7 @@ const Dex = () => {
         addPokemonCard={addPokemonCard}
         deletePokemonCard={deletePokemonCard}
       ></PokemonList>
-      >
+      
     </Container>
   );
 };

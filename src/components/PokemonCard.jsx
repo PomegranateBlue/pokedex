@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { useNavigate } from "react-router-dom";
 const PokemonCardFrame = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,9 +15,13 @@ const PokemonCardFrame = styled.div`
 `;
 
 const PokemonCard = ({ pokemonData, addPokemonCard }) => {
+  const navigate = useNavigate();
+  const showPokemonDetail = () => {
+    navigate(`/detail?id=${pokemonData.id}`);
+  };
   return (
     <div>
-      <PokemonCardFrame>
+      <PokemonCardFrame onClick={() => showPokemonDetail(pokemonData.id)}>
         {" "}
         <div>
           <img src={pokemonData.img_url}></img>
