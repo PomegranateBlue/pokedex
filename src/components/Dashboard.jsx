@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-
+import POKEMON_DATA from "../assets/MOCK_DATA";
 const SelectedPokemonBoard = styled.div`
   display: flex;
   align-items: center;
@@ -28,6 +28,15 @@ const PokeBallSprite = styled.div`
 `;
 const DashBoard = () => {
   const [pokemonInBall, setPokemonInBall] = useState([]);
+  // console.log(POKEMON_DATA);
+
+  const addPokemonCard = (id) => {
+    const selectedCard = POKEMON_DATA.find((card) => card.id === id);
+    if (selectedCard) {
+      setPokemonInBall((card) => [...card, selectedCard]);
+      console.log(pokemonInBall);
+    }
+  };
   return (
     <div>
       <SelectedPokemonBoard>

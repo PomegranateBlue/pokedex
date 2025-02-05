@@ -14,8 +14,7 @@ const PokemonCardFrame = styled.div`
   background-color: white;
 `;
 
-const PokemonCard = ({ pokemonData }) => {
-  const addPokemon = () => {};
+const PokemonCard = ({ pokemonData, addPokemonCard }) => {
   return (
     <div>
       <PokemonCardFrame>
@@ -27,7 +26,7 @@ const PokemonCard = ({ pokemonData }) => {
         <div>{pokemonData.types}</div>
         {/* <div>{pokemonData.description}</div> */}
         <div>No. {pokemonData.id}</div>
-        <button>추가</button>
+        <button onClick={addPokemonCard}>추가</button>
       </PokemonCardFrame>
     </div>
   );

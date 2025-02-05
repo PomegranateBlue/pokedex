@@ -11,12 +11,16 @@ const PokemonListContainer = styled.div`
   border: 2px solid black;
   gap: 16px;
 `;
-const PokemonList = () => {
+const PokemonList = ({ addPokemonCard }) => {
   return (
     <PokemonListContainer>
       {" "}
       {POKEMON_DATA.map((pokemon) => (
-        <PokemonCard key={pokemon.id} pokemonData={pokemon} />
+        <PokemonCard
+          key={pokemon.id}
+          pokemonData={pokemon}
+          addPokemonCard={addPokemonCard}
+        />
       ))}
     </PokemonListContainer>
   );
