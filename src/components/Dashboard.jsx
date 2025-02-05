@@ -40,28 +40,32 @@ const PokemonCardFrame = styled.div`
   background-color: white;
 `;
 const DashBoard = ({ pokemonInBall, deletePokemonCard }) => {
+  const slotNum = 6;
   return (
     <div>
       <SelectedPokemonBoard>
         <h1>좋아하는 포켓몬은?</h1>
         <PokeBallSpriteContainer>
-          {/* {pokemonInBall.map((bag) => (
-            <PokemonCardFrame key={bag.id}>
-              <div>
-                <img src={bag.img_url}></img>
-              </div>
-              <div>{bag.korean_name}</div>
-              <div>{bag.types}</div>
-              <div>No. {bag.id}</div>
-              <button onClick={() => deletePokemonCard(bag.id)}>삭제</button>
-            </PokemonCardFrame>
-          ))} */}
-          <PokeBallSprite></PokeBallSprite>
-          <PokeBallSprite></PokeBallSprite>
-          <PokeBallSprite></PokeBallSprite>
-          <PokeBallSprite></PokeBallSprite>
-          <PokeBallSprite></PokeBallSprite>
-          <PokeBallSprite></PokeBallSprite>
+          {Array.from({ length: slotNum }, (_, index) => {
+            if (index < pokemonInBall.length) {
+              const bag = pokemonInBall[index];
+              return (
+                <PokemonCardFrame key={bag.id}>
+                  <div>
+                    <img src={bag.img_url} alt={bag.korean_name} />
+                  </div>
+                  <div>{bag.korean_name}</div>
+                  <div>{bag.types}</div>
+                  <div>No. {bag.id}</div>
+                  <button onClick={() => deletePokemonCard(bag.id)}>
+                    삭제
+                  </button>
+                </PokemonCardFrame>
+              );
+            } else {
+              return <PokeBallSprite key={`empty-${index}`}></PokeBallSprite>;
+            }
+          })}
         </PokeBallSpriteContainer>
       </SelectedPokemonBoard>
     </div>
