@@ -10,21 +10,30 @@ const Container = styled.div`
 
 const Dex = () => {
   const [pokemonInBall, setPokemonInBall] = useState([]);
-  // console.log(POKEMON_DATA);
+  console.log(pokemonInBall);
 
   const addPokemonCard = (id) => {
     const selectedCard = POKEMON_DATA.find((card) => card.id === id);
-    console.log(selectedCard);
+    // console.log(selectedCard);
     if (selectedCard) {
       setPokemonInBall((selectedPokemon) => [...selectedPokemon, selectedCard]);
     }
   };
+  const deletePokemonCard = (id) => {
+    setPokemonInBall((prevPokemon) =>
+      prevPokemon.filter((card) => card.id !== id)
+    );
+  };
   return (
     <Container>
-      <DashBoard />
+      <DashBoard
+        pokemonInBall={pokemonInBall}
+        deletePokemonCard={deletePokemonCard}
+      />
       <PokemonList
         pokemonData={POKEMON_DATA}
         addPokemonCard={addPokemonCard}
+        deletePokemonCard={deletePokemonCard}
       ></PokemonList>
     </Container>
   );

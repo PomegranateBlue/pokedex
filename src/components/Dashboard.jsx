@@ -39,22 +39,23 @@ const PokemonCardFrame = styled.div`
   align-items: center;
   background-color: white;
 `;
-const DashBoard = ({ pokemonInBall }) => {
+const DashBoard = ({ pokemonInBall, deletePokemonCard }) => {
   return (
     <div>
       <SelectedPokemonBoard>
         <h1>좋아하는 포켓몬은?</h1>
         <PokeBallSpriteContainer>
-          {pokemonInBall.map((bag) => {
-            <PokemonCardFrame>
+          {pokemonInBall.map((bag) => (
+            <PokemonCardFrame key={bag.id}>
               <div>
                 <img src={bag.img_url}></img>
               </div>
               <div>{bag.korean_name}</div>
               <div>{bag.types}</div>
               <div>No. {bag.id}</div>
-            </PokemonCardFrame>;
-          })}
+              <button onClick={() => deletePokemonCard(bag.id)}>삭제</button>
+            </PokemonCardFrame>
+          ))}
         </PokeBallSpriteContainer>
       </SelectedPokemonBoard>
     </div>
