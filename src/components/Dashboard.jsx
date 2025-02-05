@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styled from "styled-components";
-import POKEMON_DATA from "../assets/MOCK_DATA";
 const SelectedPokemonBoard = styled.div`
   display: flex;
   align-items: center;
@@ -26,28 +25,36 @@ const PokeBallSprite = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const DashBoard = () => {
-  const [pokemonInBall, setPokemonInBall] = useState([]);
-  // console.log(POKEMON_DATA);
 
-  const addPokemonCard = (id) => {
-    const selectedCard = POKEMON_DATA.find((card) => card.id === id);
-    if (selectedCard) {
-      setPokemonInBall((card) => [...card, selectedCard]);
-      console.log(pokemonInBall);
-    }
-  };
+const PokemonCardFrame = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  margin: 10px;
+  border: ridge;
+  border-radius: 6px;
+  box-shadow: 6px 6px rgb(147, 147, 147);
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+`;
+const DashBoard = ({ pokemonInBall }) => {
   return (
     <div>
       <SelectedPokemonBoard>
         <h1>좋아하는 포켓몬은?</h1>
         <PokeBallSpriteContainer>
-          <PokeBallSprite>1</PokeBallSprite>
-          <PokeBallSprite>2</PokeBallSprite>
-          <PokeBallSprite>3</PokeBallSprite>
-          <PokeBallSprite>4</PokeBallSprite>
-          <PokeBallSprite>5</PokeBallSprite>
-          <PokeBallSprite>6</PokeBallSprite>
+          {pokemonInBall.map((bag) => {
+            <PokemonCardFrame>
+              <div>
+                <img src={bag.img_url}></img>
+              </div>
+              <div>{bag.korean_name}</div>
+              <div>{bag.types}</div>
+              <div>No. {bag.id}</div>
+            </PokemonCardFrame>;
+          })}
         </PokeBallSpriteContainer>
       </SelectedPokemonBoard>
     </div>

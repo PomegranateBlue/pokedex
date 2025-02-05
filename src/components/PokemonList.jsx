@@ -1,6 +1,6 @@
 import PokemonCard from "./PokemonCard";
 import styled from "styled-components";
-import POKEMON_DATA from "../assets/MOCK_DATA";
+// import POKEMON_DATA from "../assets/MOCK_DATA";
 const PokemonListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -11,11 +11,11 @@ const PokemonListContainer = styled.div`
   border: 2px solid black;
   gap: 16px;
 `;
-const PokemonList = ({ addPokemonCard }) => {
+const PokemonList = ({ addPokemonCard, pokemonData }) => {
   return (
     <PokemonListContainer>
       {" "}
-      {POKEMON_DATA.map((pokemon) => (
+      {pokemonData.map((pokemon) => (
         <PokemonCard
           key={pokemon.id}
           pokemonData={pokemon}

@@ -26,7 +26,8 @@ const PokemonCard = ({ pokemonData, addPokemonCard }) => {
         <div>{pokemonData.types}</div>
         {/* <div>{pokemonData.description}</div> */}
         <div>No. {pokemonData.id}</div>
-        <button onClick={addPokemonCard}>추가</button>
+        <button onClick={() => addPokemonCard(pokemonData.id)}>추가</button>
+        {/*card->list->dex->dashboard */}
       </PokemonCardFrame>
     </div>
   );
