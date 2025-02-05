@@ -9,7 +9,6 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <h1>포켓몬 도감</h1>
       <Router />
     </div>
   );

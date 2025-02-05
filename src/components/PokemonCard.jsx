@@ -11,6 +11,7 @@ const PokemonCardFrame = styled.div`
   font-size: 16px;
   justify-content: center;
   align-items: center;
+  background-color: white;
 `;
 
 const PokemonCard = ({ pokemonData }) => {

@@ -1,33 +1,37 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-const SelectedPokemon = styled.div`
+const SelectedPokemonBoard = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: pink;
+  background-color: rgb(229, 227, 227);
+  border-radius: 10px;
+  padding: 10px;
 `;
 
 const PokeBallSpriteContainer = styled.div`
   display: flex;
-  margin: 0 auto;
-  justify-content: ;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 10px;
 `;
 const PokeBallSprite = styled.div`
   display: flex;
-
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-  background-color: red;
-  justify-content: space-around;
+  width: 120px;
+  height: 120px;
+  border: 5px dotted gray;
+  border-radius: 10px;
+  background-color: rgb(191, 177, 177);
+  align-items: center;
+  justify-content: center;
 `;
 const DashBoard = () => {
   const [pokemonInBall, setPokemonInBall] = useState([]);
   return (
     <div>
-      <SelectedPokemon>
-        <h2>좋아하는 포켓몬은?</h2>
+      <SelectedPokemonBoard>
+        <h1>좋아하는 포켓몬은?</h1>
         <PokeBallSpriteContainer>
           <PokeBallSprite>1</PokeBallSprite>
           <PokeBallSprite>2</PokeBallSprite>
@@ -36,7 +40,7 @@ const DashBoard = () => {
           <PokeBallSprite>5</PokeBallSprite>
           <PokeBallSprite>6</PokeBallSprite>
         </PokeBallSpriteContainer>
-      </SelectedPokemon>
+      </SelectedPokemonBoard>
     </div>
   );
 };
