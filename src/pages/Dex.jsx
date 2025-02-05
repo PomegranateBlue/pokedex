@@ -1,5 +1,6 @@
 import DashBoard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
+// import PokemonDetail from "../components/PokemonDetail";
 import styled from "styled-components";
 import POKEMON_DATA from "../assets/MOCK_DATA";
 import { useState } from "react";
@@ -40,6 +41,7 @@ const Dex = () => {
         addPokemonCard={addPokemonCard}
         deletePokemonCard={deletePokemonCard}
       ></PokemonList>
+      >
     </Container>
   );
 };
