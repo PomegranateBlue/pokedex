@@ -1,10 +1,10 @@
-import { useState } from "react";
+import Pokeball from "../assets/pokeball.png";
 import styled from "styled-components";
 const SelectedPokemonBoard = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(229, 227, 227);
+  background-color: #f6f6f6;
   border-radius: 10px;
   padding: 10px;
 `;
@@ -21,10 +21,14 @@ const PokeBall = styled.div`
   height: 120px;
   border: 5px dotted gray;
   border-radius: 10px;
-  background-color: rgb(191, 177, 177);
+  background-color: rgb(209, 209, 209);
   align-items: center;
   justify-content: center;
   font-size: 12px;
+`;
+const PokeBallImage = styled.img`
+  width: 100px;
+  height: 100px;
 `;
 
 const PokemonCard = styled.div`
@@ -63,7 +67,9 @@ const DashBoard = ({ pokemonInBall, deletePokemonCard }) => {
               );
             } else {
               return (
-                <PokeBall key={`empty-${index}`}>포켓몬을 고르세요</PokeBall>
+                <PokeBall key={`empty-${index}`}>
+                  <PokeBallImage src={Pokeball} />
+                </PokeBall>
               );
             }
           })}

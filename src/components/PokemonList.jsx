@@ -6,9 +6,9 @@ const PokemonListContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   padding: 30px;
   margin-top: 30px;
-  background-color: gray;
+  background-color: #f6f6f6;
   border-radius: 12px;
-  border: 2px solid black;
+  border: transparent;
   gap: 16px;
 `;
 const PokemonList = ({ addPokemonCard, pokemonData }) => {

@@ -8,7 +8,7 @@ const PokemonDetailContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: ;
+  font-size: 20px;
 `;
 const PokemonDetailImage = styled.img`
   width: 250px;
@@ -26,7 +26,7 @@ const PokemonDetail = () => {
   };
   return (
     <PokemonDetailContainer>
-      <h1>{selectedPokemonCard.korean_name}</h1>
+      <h2>{selectedPokemonCard.korean_name}</h2>
       <PokemonDetailImage src={selectedPokemonCard.img_url} />
       <p>{selectedPokemonCard.description}</p>
       <p>타입: {selectedPokemonCard.types.join(", ")}</p>
