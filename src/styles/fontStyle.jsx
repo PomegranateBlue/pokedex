@@ -21,7 +21,10 @@ export const PokemonType = styled.div`
   border-radius: 3px;
   background-color: ${(props) => typeColors[props.type]};
 `;
-export const PokemonDescription = styled.div``;
+export const PokemonDescription = styled.div`
+  font-family: "DungGeunMo";
+  font-size: 24px;
+`;
 
 export const PokemonId = styled.div`
   font-size: 20px;

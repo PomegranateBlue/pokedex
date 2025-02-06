@@ -5,5 +5,10 @@ export const CardButton = styled.button`
   font-size: 16px;
   padding: 8px;
   font-family: "DungGeunMo";
-  
+`;
+export const DeleteButton = styled.button`
+  margin-top: 6px;
+  font-size: 16px;
+  padding: 8px;
+  font-family: "DungGeunMo";
 `;

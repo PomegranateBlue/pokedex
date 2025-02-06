@@ -4,7 +4,13 @@ import { useNavigate } from "react-router-dom";
 import {
   PokemonDetailContainer,
   PokemonDetailImage,
+  PokemonDetailDescription,
+  PokemonDetailId,
+  ReturnButton,
+  PokemonDetailName,
 } from "../styles/PokemonDetailStyle";
+import { PokemonType, PokemonTypeContainer } from "../styles/fontStyle";
+
 const PokemonDetail = () => {
   const [searchParams] = useSearchParams();
   const pokemonId = searchParams.get("id");
@@ -17,12 +23,20 @@ const PokemonDetail = () => {
   };
   return (
     <PokemonDetailContainer>
-      <h2>{selectedPokemonCard.korean_name}</h2>
+      <PokemonDetailName>{selectedPokemonCard.korean_name}</PokemonDetailName>
       <PokemonDetailImage src={selectedPokemonCard.img_url} />
-      <p>{selectedPokemonCard.description}</p>
-      <p>타입: {selectedPokemonCard.types.join(", ")}</p>
-      <p>No. {selectedPokemonCard.id}</p>
-      <button onClick={returnToList}>뒤로가기</button>
+      <PokemonDetailDescription>
+        {selectedPokemonCard.description}
+      </PokemonDetailDescription>
+      <PokemonType>
+        {selectedPokemonCard.types.map((types, index) => (
+          <PokemonTypeContainer key={index}>
+            <PokemonType type={types}>{types}</PokemonType>
+          </PokemonTypeContainer>
+        ))}
+      </PokemonType>
+      <PokemonDetailId>No. {selectedPokemonCard.id}</PokemonDetailId>
+      <ReturnButton onClick={returnToList}>뒤로가기</ReturnButton>
     </PokemonDetailContainer>
   );
 };

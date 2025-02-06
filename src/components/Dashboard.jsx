@@ -6,7 +6,13 @@ import {
   PokeBall,
   PokeBallImage,
 } from "../styles/DashboardStyle.jsx";
-
+import {
+  PokemonType,
+  PokemonId,
+  PokemonTypeContainer,
+  PokemonName,
+} from "../styles/fontStyle";
+import { DeleteButton } from "../styles/ButtonStyle.jsx";
 import { useContext } from "react";
 import { PokemonContext } from "../context/PokemonContext";
 
@@ -16,7 +22,7 @@ const DashBoard = () => {
   return (
     <div>
       <SelectedPokemonBoard>
-        <h1>좋아하는 포켓몬은?</h1>
+        <h1 style={{ fontFamily: "DungGeunMo" }}>좋아하는 포켓몬은?</h1>
         <PokeBallContainer>
           {Array.from({ length: maxPokemon }, (_, index) => {
             if (index < pokemonInBall.length) {
@@ -24,12 +30,18 @@ const DashBoard = () => {
               return (
                 <PokemonCard key={bag.id}>
                   <img src={bag.img_url} alt={bag.korean_name} />
-                  <div>{bag.korean_name}</div>
-                  <div>{bag.types.join(", ")}</div>
-                  <div>No. {bag.id}</div>
-                  <button onClick={() => deletePokemonCard(bag.id)}>
+                  <PokemonName>{bag.korean_name}</PokemonName>
+                  <PokemonType>
+                    {bag.types.map((types, index) => (
+                      <PokemonTypeContainer key={index}>
+                        <PokemonType type={types}>{types}</PokemonType>
+                      </PokemonTypeContainer>
+                    ))}
+                  </PokemonType>
+                  <PokemonId>No. {bag.id}</PokemonId>
+                  <DeleteButton onClick={() => deletePokemonCard(bag.id)}>
                     삭제
-                  </button>
+                  </DeleteButton>
                 </PokemonCard>
               );
             } else {
