@@ -2,11 +2,8 @@ import { PokemonCardFrame } from "../styles/PokemonCardStyle";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { PokemonContext } from "../context/PokemonContext";
-import {
-  PokemonName,
-  PokemonDescription,
-  PokemonId,
-} from "../styles/fontStyle";
+import { CardButton } from "../styles/ButtonStyle";
+import { PokemonName, PokemonId } from "../styles/fontStyle";
 const PokemonCard = ({ pokemonData }) => {
   const { addPokemonCard } = useContext(PokemonContext);
   const navigate = useNavigate();
@@ -27,14 +24,14 @@ const PokemonCard = ({ pokemonData }) => {
         <PokemonName>{pokemonData.korean_name}</PokemonName>
         <div>{pokemonData.types}</div>
         <PokemonId>No. {pokemonData.id}</PokemonId>
-        <button
+        <CardButton
           onClick={(e) => {
             e.stopPropagation();
             addPokemonCard(pokemonData.id);
           }}
         >
           추가
-        </button>
+        </CardButton>
       </PokemonCardFrame>
     </div>
   );

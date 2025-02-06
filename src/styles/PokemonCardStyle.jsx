@@ -5,7 +5,7 @@ export const PokemonCardFrame = styled.div`
   flex-direction: column;
   padding: 30px;
   margin: 10px;
-  border: ridge;
+  border: 4px solid gray;
   border-radius: 6px;
   box-shadow: 6px 6px rgb(147, 147, 147);
   justify-content: center;

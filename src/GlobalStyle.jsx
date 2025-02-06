@@ -1,9 +1,10 @@
 import { createGlobalStyle } from "styled-components";
-
+import DungGeunMo from "../src/fonts/DungGeunMo.woff";
 const GlobalStyle = createGlobalStyle`
     @font-face {
-        font-family: "PokemonFont";
-        src: url("../src/fonts/PokemonGSK2Mono.ttf") format("truetype");
+        font-family:"DungGeunmo";
+        src:url(${DungGeunMo}) format('woff');
+
 
     }
     body,html{
