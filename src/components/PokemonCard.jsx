@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { PokemonContext } from "../context/PokemonContext";
 const PokemonCardFrame = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,7 +16,8 @@ const PokemonCardFrame = styled.div`
   background-color: white;
 `;
 
-const PokemonCard = ({ pokemonData, addPokemonCard }) => {
+const PokemonCard = ({ pokemonData}) => {
+  const {  addPokemonCard } = useContext(PokemonContext);
   const navigate = useNavigate();
   const showPokemonDetail = () => {
     navigate(`/detail?id=${pokemonData.id}`);

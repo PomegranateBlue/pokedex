@@ -30,7 +30,12 @@ const Dex = () => {
   };
   return (
     <PokemonContext.Provider
-      value={{ pokemonInBall, deletePokemonCard, addPokemonCard, POKEMON_DATA }}
+      value={{
+        pokemonInBall,
+        deletePokemonCard,
+        addPokemonCard,
+        POKEMON_DATA,
+      }}
     >
       <Container>
         <DashBoard />
