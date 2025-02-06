@@ -20,3 +20,5 @@
 
 - `Dashboard`, `PokemonList`, `PokemonCard` 등의 주요 컴포넌트를 `components` 폴더에 생성합니다.
 - 각 컴포넌트의 기본 UI를 작성하고, 간단한 스타일을 추가해 화면에 기본 구조가 나타나도록 합니다.
+
+리덕스로 리팩토링링
