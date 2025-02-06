@@ -1,13 +1,13 @@
 import Router from "./shared/Router";
-import styled from "styled-components";
+import { PokemonContext } from "../src/context/PokemonContext";
 import GlobalStyle from "./GlobalStyle";
 
 function App() {
   return (
-    <div>
+    <PokemonContext.Provider>
       <GlobalStyle />
       <Router />
-    </div>
+    </PokemonContext.Provider>
   );
 }
 
