@@ -11,12 +11,9 @@ const Container = styled.div`
 
 const Dex = () => {
   const [pokemonInBall, setPokemonInBall] = useState([]);
-  console.log(pokemonInBall);
 
   const addPokemonCard = (id) => {
     const selectedCard = POKEMON_DATA.find((card) => card.id === id);
-    // console.log(selectedCard);
-
     if (selectedCard) {
       if (pokemonInBall.length >= 6) {
         alert("최대 6마리까지 데리고 다닐 수 있습니다");

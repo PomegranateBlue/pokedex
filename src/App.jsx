@@ -4,10 +4,10 @@ import GlobalStyle from "./GlobalStyle";
 
 function App() {
   return (
-    <PokemonContext.Provider>
+    <div>
       <GlobalStyle />
       <Router />
-    </PokemonContext.Provider>
+    </div>
   );
 }
 
