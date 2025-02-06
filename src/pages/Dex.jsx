@@ -4,6 +4,7 @@ import PokemonList from "../components/PokemonList";
 import styled from "styled-components";
 import POKEMON_DATA from "../assets/MOCK_DATA";
 import { useState } from "react";
+import { PokemonContext } from "../context/PokemonContext";
 const Container = styled.div`
   padding: 30px;
   margin: 0 auto;
@@ -28,17 +29,14 @@ const Dex = () => {
     );
   };
   return (
-    <Container>
-      <DashBoard
-        pokemonInBall={pokemonInBall}
-        deletePokemonCard={deletePokemonCard}
-      />
-      <PokemonList
-        pokemonData={POKEMON_DATA}
-        addPokemonCard={addPokemonCard}
-        deletePokemonCard={deletePokemonCard}
-      ></PokemonList>
-    </Container>
+    <PokemonContext.Provider
+      value={{ pokemonInBall, deletePokemonCard, addPokemonCard, POKEMON_DATA }}
+    >
+      <Container>
+        <DashBoard />
+        <PokemonList></PokemonList>
+      </Container>
+    </PokemonContext.Provider>
   );
 };
 

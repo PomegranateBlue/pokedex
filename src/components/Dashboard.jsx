@@ -1,5 +1,7 @@
 import Pokeball from "../assets/pokeball.png";
 import styled from "styled-components";
+import { useContext } from "react";
+import { PokemonContext } from "../context/PokemonContext";
 const SelectedPokemonBoard = styled.div`
   display: flex;
   align-items: center;
@@ -44,7 +46,8 @@ const PokemonCard = styled.div`
   align-items: center;
   background-color: white;
 `;
-const DashBoard = ({ pokemonInBall, deletePokemonCard }) => {
+const DashBoard = () => {
+  const { pokemonInBall, deletePokemonCard } = useContext(PokemonContext);
   const maxPokemon = 6;
   return (
     <div>

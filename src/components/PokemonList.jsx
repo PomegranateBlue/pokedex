@@ -1,6 +1,7 @@
 import PokemonCard from "./PokemonCard";
 import styled from "styled-components";
-
+import { useContext } from "react";
+import { PokemonContext } from "../context/PokemonContext";
 const PokemonListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -11,10 +12,11 @@ const PokemonListContainer = styled.div`
   border: transparent;
   gap: 16px;
 `;
-const PokemonList = ({ addPokemonCard, pokemonData }) => {
+const PokemonList = () => {
+  const { addPokemonCard, POKEMON_DATA } = useContext(PokemonContext);
   return (
     <PokemonListContainer>
-      {pokemonData.map((pokemon) => (
+      {POKEMON_DATA.map((pokemon) => (
         <PokemonCard
           key={pokemon.id}
           pokemonData={pokemon}
