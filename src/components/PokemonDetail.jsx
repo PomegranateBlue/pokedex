@@ -1,22 +1,38 @@
 import { useSearchParams } from "react-router-dom";
 import POKEMON_DATA from "../assets/MOCK_DATA";
+import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+const PokemonDetailContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: ;
+`;
+const PokemonDetailImage = styled.img`
+  width: 250px;
+  height: 250px;
+`;
 const PokemonDetail = () => {
   const [searchParams] = useSearchParams();
   const pokemonId = searchParams.get("id");
-
+  const navigate = useNavigate();
   const selectedPokemonCard = POKEMON_DATA.find(
     (pokemon) => pokemon.id.toString() === pokemonId
   );
-  //   console.log(selectedPokemonCard);
+  const returnToList = () => {
+    navigate(-1);
+  };
   return (
-    <div>
-      <h1>{selectedPokemonCard.korean_name}의 상세 정보</h1>
-      <img src={selectedPokemonCard.img_url} />
+    <PokemonDetailContainer>
+      <h1>{selectedPokemonCard.korean_name}</h1>
+      <PokemonDetailImage src={selectedPokemonCard.img_url} />
       <p>{selectedPokemonCard.description}</p>
       <p>타입: {selectedPokemonCard.types.join(", ")}</p>
       <p>No. {selectedPokemonCard.id}</p>
-      <button>뒤로가기</button>
-    </div>
+      <button onClick={returnToList}>뒤로가기</button>
+    </PokemonDetailContainer>
   );
 };
 

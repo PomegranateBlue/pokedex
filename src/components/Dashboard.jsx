@@ -52,11 +52,7 @@ const DashBoard = ({ pokemonInBall, deletePokemonCard }) => {
               const bag = pokemonInBall[index];
               return (
                 <PokemonCard key={bag.id}>
-                  <img
-                    src={bag.img_url}
-                    alt={bag.korean_name}
-                    style={{ width: "100%" }}
-                  />
+                  <img src={bag.img_url} alt={bag.korean_name} />
                   <div>{bag.korean_name}</div>
                   <div>{bag.types.join(", ")}</div>
                   <div>No. {bag.id}</div>

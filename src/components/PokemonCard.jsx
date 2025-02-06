@@ -22,16 +22,13 @@ const PokemonCard = ({ pokemonData, addPokemonCard }) => {
   return (
     <div>
       <PokemonCardFrame onClick={() => showPokemonDetail(pokemonData.id)}>
-        {" "}
         <div>
           <img src={pokemonData.img_url}></img>
         </div>
         <div>{pokemonData.korean_name}</div>
         <div>{pokemonData.types}</div>
-        {/* <div>{pokemonData.description}</div> */}
         <div>No. {pokemonData.id}</div>
         <button onClick={() => addPokemonCard(pokemonData.id)}>추가</button>
-        {/*card->list->dex->dashboard */}
       </PokemonCardFrame>
     </div>
   );
