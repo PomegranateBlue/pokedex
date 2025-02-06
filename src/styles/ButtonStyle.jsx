@@ -5,4 +5,5 @@ export const CardButton = styled.button`
   font-size: 16px;
   padding: 8px;
   font-family: "DungGeunMo";
+  
 `;

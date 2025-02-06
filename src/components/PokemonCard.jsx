@@ -3,7 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { PokemonContext } from "../context/PokemonContext";
 import { CardButton } from "../styles/ButtonStyle";
-import { PokemonName, PokemonId } from "../styles/fontStyle";
+import {
+  PokemonName,
+  PokemonId,
+  PokemonType,
+  PokemonTypeContainer,
+} from "../styles/fontStyle";
 const PokemonCard = ({ pokemonData }) => {
   const { addPokemonCard } = useContext(PokemonContext);
   const navigate = useNavigate();
@@ -22,7 +27,13 @@ const PokemonCard = ({ pokemonData }) => {
           <img src={pokemonData.img_url}></img>
         </div>
         <PokemonName>{pokemonData.korean_name}</PokemonName>
-        <div>{pokemonData.types}</div>
+        <PokemonType>
+          {pokemonData.types.map((types, index) => (
+            <PokemonTypeContainer key={index}>
+              <PokemonType type={types}>{types}</PokemonType>
+            </PokemonTypeContainer>
+          ))}
+        </PokemonType>
         <PokemonId>No. {pokemonData.id}</PokemonId>
         <CardButton
           onClick={(e) => {

@@ -11,4 +11,9 @@ export const PokemonCardFrame = styled.div`
   justify-content: center;
   align-items: center;
   background-color: white;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    box-shadow: 12px 12px rgb(147, 147, 147);
+    transform: scale(1.05);
+  }
 `;

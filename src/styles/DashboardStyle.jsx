@@ -20,7 +20,7 @@ export const PokeBall = styled.div`
   height: 120px;
   border: 5px dotted gray;
   border-radius: 10px;
-  background-color: rgb(209, 209, 209);
+  background-color: #ffcc00;
   align-items: center;
   justify-content: center;
   font-size: 12px;
