@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
-        font-family: "PixelFont";
-        src: url("../src/fonts/PressStart2P-Regular.ttf") format("truetype");
+        font-family: "PokemonFont";
+        src: url("../src/fonts/PokemonGSK2Mono.ttf") format("truetype");
 
     }
     body,html{

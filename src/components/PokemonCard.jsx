@@ -2,7 +2,11 @@ import { PokemonCardFrame } from "../styles/PokemonCardStyle";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { PokemonContext } from "../context/PokemonContext";
-
+import {
+  PokemonName,
+  PokemonDescription,
+  PokemonId,
+} from "../styles/fontStyle";
 const PokemonCard = ({ pokemonData }) => {
   const { addPokemonCard } = useContext(PokemonContext);
   const navigate = useNavigate();
@@ -20,9 +24,9 @@ const PokemonCard = ({ pokemonData }) => {
         <div>
           <img src={pokemonData.img_url}></img>
         </div>
-        <div>{pokemonData.korean_name}</div>
+        <PokemonName>{pokemonData.korean_name}</PokemonName>
         <div>{pokemonData.types}</div>
-        <div>No. {pokemonData.id}</div>
+        <PokemonId>No. {pokemonData.id}</PokemonId>
         <button
           onClick={(e) => {
             e.stopPropagation();

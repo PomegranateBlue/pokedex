@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const PokemonCardFrame = styled.div`
   display: flex;
@@ -8,7 +8,6 @@ export const PokemonCardFrame = styled.div`
   border: ridge;
   border-radius: 6px;
   box-shadow: 6px 6px rgb(147, 147, 147);
-  font-size: 16px;
   justify-content: center;
   align-items: center;
   background-color: white;

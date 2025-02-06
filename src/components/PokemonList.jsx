@@ -13,15 +13,11 @@ const PokemonListContainer = styled.div`
   gap: 16px;
 `;
 const PokemonList = () => {
-  const { addPokemonCard, POKEMON_DATA } = useContext(PokemonContext);
+  const { POKEMON_DATA } = useContext(PokemonContext);
   return (
     <PokemonListContainer>
       {POKEMON_DATA.map((pokemon) => (
-        <PokemonCard
-          key={pokemon.id}
-          pokemonData={pokemon}
-          addPokemonCard={addPokemonCard}
-        />
+        <PokemonCard key={pokemon.id} pokemonData={pokemon} />
       ))}
     </PokemonListContainer>
   );
