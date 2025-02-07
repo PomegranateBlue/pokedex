@@ -1,8 +1,6 @@
 import PokemonCard from "./PokemonCard";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-// import { useContext } from "react";
-// import { PokemonContext } from "../context/PokemonContext";
 const PokemonListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -14,7 +12,6 @@ const PokemonListContainer = styled.div`
   gap: 16px;
 `;
 const PokemonList = () => {
-  // const { POKEMON_DATA } = useContext(PokemonContext);
   const pokemonData = useSelector((state) => state.pokemon.pokemonData);
   return (
     <PokemonListContainer>

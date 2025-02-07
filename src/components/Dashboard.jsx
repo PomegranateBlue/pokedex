@@ -13,12 +13,9 @@ import {
   PokemonName,
 } from "../styles/fontStyle";
 import { DeleteButton } from "../styles/ButtonStyle.jsx";
-// import { useContext } from "react";
-// import { PokemonContext } from "../context/PokemonContext";
 import { useSelector, useDispatch } from "react-redux";
 import { deletePokemonCard } from "../redux/slices/pokeDexSlices.jsx";
 const DashBoard = () => {
-  // const { pokemonInBall, deletePokemonCard } = useContext(PokemonContext);
   const dispatch = useDispatch();
   const pokemonInBall = useSelector((state) => state.pokemon.selectedPokemon);
   const maxPokemon = 6;

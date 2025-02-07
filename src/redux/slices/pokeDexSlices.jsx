@@ -1,17 +1,10 @@
 import POKEMON_DATA from "../../assets/MOCK_DATA";
 import { createSlice } from "@reduxjs/toolkit";
-//MOCK DATA 모든 상태 관리를 여기서서
-//포켓몬 추가/삭제, 대시보드에 존재하는 상태를 관리하자
 const initialState = {
   selectedPokemon: [],
   pokemonData: POKEMON_DATA,
 };
-{
-  /*
-  initialState는 컴포넌트에서 다루는 데이터, 이 데이터를 조작하여 상태를 관리한다
-  따라서 원본이 되는 POKEMON_DATA가 들어가게된다.
-   */
-}
+
 const pokeSlice = createSlice({
   name: "pokeSlice",
   initialState,
