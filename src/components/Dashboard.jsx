@@ -13,11 +13,14 @@ import {
   PokemonName,
 } from "../styles/fontStyle";
 import { DeleteButton } from "../styles/ButtonStyle.jsx";
-import { useContext } from "react";
-import { PokemonContext } from "../context/PokemonContext";
-
+// import { useContext } from "react";
+// import { PokemonContext } from "../context/PokemonContext";
+import { useSelector, useDispatch } from "react-redux";
+import { deletePokemonCard } from "../redux/slices/pokeDexSlices.jsx";
 const DashBoard = () => {
-  const { pokemonInBall, deletePokemonCard } = useContext(PokemonContext);
+  // const { pokemonInBall, deletePokemonCard } = useContext(PokemonContext);
+  const dispatch = useDispatch();
+  const pokemonInBall = useSelector((state) => state.pokemon.selectedPokemon);
   const maxPokemon = 6;
   return (
     <div>
@@ -39,7 +42,9 @@ const DashBoard = () => {
                     ))}
                   </PokemonType>
                   <PokemonId>No. {bag.id}</PokemonId>
-                  <DeleteButton onClick={() => deletePokemonCard(bag.id)}>
+                  <DeleteButton
+                    onClick={() => dispatch(deletePokemonCard(bag.id))}
+                  >
                     삭제
                   </DeleteButton>
                 </PokemonCard>

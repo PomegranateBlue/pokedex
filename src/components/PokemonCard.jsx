@@ -1,7 +1,7 @@
 import { PokemonCardFrame } from "../styles/PokemonCardStyle";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { PokemonContext } from "../context/PokemonContext";
+// import { useContext } from "react";
+// import { PokemonContext } from "../context/PokemonContext";
 import { CardButton } from "../styles/ButtonStyle";
 import {
   PokemonName,
@@ -9,8 +9,11 @@ import {
   PokemonType,
   PokemonTypeContainer,
 } from "../styles/fontStyle";
+import { useDispatch } from "react-redux";
+import { addPokemonCard } from "../redux/slices/pokeDexSlices";
 const PokemonCard = ({ pokemonData }) => {
-  const { addPokemonCard } = useContext(PokemonContext);
+  // const { addPokemonCard } = useContext(PokemonContext);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const showPokemonDetail = () => {
     navigate(`/detail?id=${pokemonData.id}`);
@@ -38,7 +41,7 @@ const PokemonCard = ({ pokemonData }) => {
         <CardButton
           onClick={(e) => {
             e.stopPropagation();
-            addPokemonCard(pokemonData.id);
+            dispatch(addPokemonCard({ id: pokemonData.id }));
           }}
         >
           추가
