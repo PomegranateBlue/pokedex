@@ -29,6 +29,17 @@ export const PokemonDetailId = styled.div`
   font-family: "DungGeunMo";
 `;
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+export const AddButton = styled.button`
+  font-family: "DungGeunMo";
+  font-size: 20px;
+  padding: 10px 15px;
+`;
+
 export const ReturnButton = styled.button`
   font-family: "DungGeunMo";
   font-size: 20px;

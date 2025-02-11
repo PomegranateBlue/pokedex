@@ -1,6 +1,6 @@
 import POKEMON_DATA from "../../assets/MOCK_DATA";
 import { createSlice } from "@reduxjs/toolkit";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 const initialState = {
   selectedPokemon: [],
   pokemonData: POKEMON_DATA,
@@ -14,17 +14,22 @@ const pokeSlice = createSlice({
       const selectedPokemonCard = state.pokemonData.find(
         (pokemon) => pokemon.id === action.payload.id
       );
-      if (state.selectedPokemon.includes(selectedPokemonCard)) {
-        alert("똑같은 포켓몬은 1마리만 데려갈 수 있습니다");
+      if (
+        state.selectedPokemon.some(
+          (pokemon) => pokemon.id === action.payload.id
+        )
+      ) {
+        toast.error("똑같은 포켓몬은 1마리만 데려갈 수 있습니다");
         return;
       }
       if (selectedPokemonCard) {
         if (state.selectedPokemon.length >= 6) {
-          alert("최대 6마리의 포켓몬을 데리고 다닐 수 있습니다");
+          toast.error("최대 6마리의 포켓몬을 데리고 다닐 수 있습니다");
           return;
         }
       }
       state.selectedPokemon.push(selectedPokemonCard);
+      toast.success("포켓몬이 추가되었습니다!")
     },
 
     deletePokemonCard: (state, action) => {
