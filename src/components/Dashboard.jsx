@@ -15,8 +15,13 @@ import {
 import { DeleteButton } from "../styles/ButtonStyle.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { deletePokemonCard } from "../redux/slices/pokeDexSlices.jsx";
+import { useNavigate } from "react-router-dom";
 const DashBoard = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const showPokemonDetail = (id) => {
+    navigate(`/detail?id=${id}`);
+  };
   const pokemonInBall = useSelector((state) => state.pokemon.selectedPokemon);
   const maxPokemon = 6;
   return (
@@ -28,7 +33,12 @@ const DashBoard = () => {
             if (index < pokemonInBall.length) {
               const bag = pokemonInBall[index];
               return (
-                <PokemonCard key={bag.id}>
+                <PokemonCard
+                  key={bag.id}
+                  onClick={() => {
+                    showPokemonDetail(bag.id);
+                  }}
+                >
                   <img src={bag.img_url} alt={bag.korean_name} />
                   <PokemonName>{bag.korean_name}</PokemonName>
                   <PokemonType>
