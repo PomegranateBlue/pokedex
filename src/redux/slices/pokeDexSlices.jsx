@@ -1,5 +1,6 @@
 import POKEMON_DATA from "../../assets/MOCK_DATA";
 import { createSlice } from "@reduxjs/toolkit";
+import { ToastContainer, toast } from "react-toastify";
 const initialState = {
   selectedPokemon: [],
   pokemonData: POKEMON_DATA,
